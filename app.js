@@ -1,14 +1,12 @@
-function hello() {
-  console.log("inside hello");
-  console.log("Hello");
+function one() {
+  return 1;
+}
+function two() {
+  return one() + one();
 }
 
-function demo() {
-  console.log("Inside demo func");
-  hello();
+function three() {
+  let ans = two() + one();
+  console.log(ans);
 }
-
-console.log("HI");
-demo();
-
-console.log("bye bye");
+three();
