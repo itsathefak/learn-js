@@ -1,11 +1,16 @@
-setTimeout(() => {
-  console.log("My Name is Athef");
-}, 2000);
+// Call Back hell
 
-setTimeout(() => {
-  console.log("I'm a CS Student");
-}, 2000);
+h1 = document.querySelector("h1");
 
-console.log("Hello...");
+function colorChange(color, delay, nextColorChange) {
+  setTimeout(() => {
+    h1.style.color = color;
+    if (nextColorChange) nextColorChange();
+  }, delay);
+}
 
-// Js is Single Threaded - You might see JS executes 2 setTimeout at the same time, thats possible cuz settimeout is run by browser (c++) and not JS, JS executes remaining code while browser stores the function in call stack.
+colorChange("red", 1000, () => {
+  colorChange("blue", 1000, () => {
+    colorChange("green", 1000);
+  });
+});
