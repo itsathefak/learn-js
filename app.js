@@ -17,11 +17,21 @@
 
 // Setting up promises
 
-function savetoDB(data) {
+function savetoDB(data, success, failure) {
   let internetSpeed = Math.floor(Math.random() * 10) + 1;
   if (internetSpeed > 4) {
-    console.log(`Your data has been stored : ${data}`);
+    success();
   } else {
-    console.log("Weak Connection, Data Not stored !");
+    failure();
   }
 }
+
+savetoDB(
+  "Athef Ak",
+  () => {
+    console.log("Your data has been stored");
+  },
+  () => {
+    console.log("Weak Connection, Data Not stored !");
+  }
+);
