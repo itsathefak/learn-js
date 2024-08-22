@@ -30,6 +30,24 @@ savetoDB(
   "Athef Ak",
   () => {
     console.log("Your data has been stored");
+    savetoDB(
+      "Hello",
+      () => {
+        console.log("Your data 2 has been stored");
+        savetoDB(
+          "Hi",
+          () => {
+            console.log("Your data 3 has been stored");
+          },
+          () => {
+            console.log("Weak Connection, Data 3 Not stored !");
+          }
+        );
+      },
+      () => {
+        console.log("Weak Connection, Data 2 Not stored !");
+      }
+    );
   },
   () => {
     console.log("Weak Connection, Data Not stored !");
