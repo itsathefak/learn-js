@@ -65,5 +65,11 @@ function savetoDB(data) {
   });
 }
 
-savetoDB("AthefAk");
-savetoDB("Pandu");
+let request = savetoDB("Athef");
+request
+  .then(() => {
+    console.log("Promise was Resolved");
+  })
+  .catch(() => {
+    console.log("Promise was Rejected");
+  });
