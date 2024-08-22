@@ -65,8 +65,7 @@ function savetoDB(data) {
   });
 }
 
-let request = savetoDB("Athef");
-request
+savetoDB("Athef")
   .then(() => {
     console.log("Promise was Resolved");
   })
