@@ -67,7 +67,10 @@ function savetoDB(data) {
 
 savetoDB("Athef")
   .then(() => {
-    console.log("Promise was Resolved");
+    console.log("Data 1 was saved");
+    savetoDB("Pandu").then(() => {
+      console.log("data 2 was saved");
+    });
   })
   .catch(() => {
     console.log("Promise was Rejected");
