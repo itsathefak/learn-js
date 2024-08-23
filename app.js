@@ -66,17 +66,21 @@ function savetoDB(data) {
 }
 
 savetoDB("Athef")
-  .then(() => {
+  .then((result) => {
     console.log("Data 1 was saved");
+    console.log("Result of promise :", result);
     return savetoDB("Pandu");
   })
-  .then(() => {
+  .then((result) => {
     console.log("Data 2 was saved");
+    console.log("Result of promise :", result);
     return savetoDB("Baby R");
   })
-  .then(() => {
+  .then((result) => {
     console.log("Data 3 was saved");
+    console.log("Result of promise :", result);
   })
-  .catch(() => {
+  .catch((error) => {
     console.log("Promise was Rejected");
+    console.log("error of promise :", error);
   });
