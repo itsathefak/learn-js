@@ -1,13 +1,20 @@
-// h1 = document.querySelector("h1");
+h1 = document.querySelector("h1");
 
-// function colorChange(color, delay) {
-//   return new Promise((response, reject) => {
-//     setTimeout(() => {
-//       h1.style.color = color;
-//       response("Colour Changed");
-//     }, delay);
-//   });
-// }
+function colorChange(color, delay) {
+  return new Promise((response, reject) => {
+    setTimeout(() => {
+      h1.style.color = color;
+      response("Colour Changed");
+    }, delay);
+  });
+}
+
+async function demo() {
+  await colorChange("red", 1000);
+  await colorChange("green", 1000);
+  await colorChange("blue", 1000);
+  await colorChange("yellow", 1000);
+}
 
 // colorChange("red", 1000)
 //   .then(() => {
@@ -27,19 +34,19 @@
 //     return colorChange("pink", 1000);
 //   });
 
-async function greet() {
-  throw "404";
-  return "hello world";
-}
+// async function greet() {
+//   throw "404";
+//   return "hello world";
+// }
 
-let hello = async () => {
-  return "hello world 2";
-};
+// let hello = async () => {
+//   return "hello world 2";
+// };
 
-greet()
-  .then((result) => {
-    console.log("Promise was fulfilled", result);
-  })
-  .catch((error) => {
-    console.log("Promise was not fulfilled", error);
-  });
+// greet()
+//   .then((result) => {
+//     console.log("Promise was fulfilled", result);
+//   })
+//   .catch((error) => {
+//     console.log("Promise was not fulfilled", error);
+//   });
