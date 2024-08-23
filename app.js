@@ -3,17 +3,29 @@ h1 = document.querySelector("h1");
 function colorChange(color, delay) {
   return new Promise((response, reject) => {
     setTimeout(() => {
+      let num = Math.floor(Math.random() * 10 + 1);
+      if (num > 4) {
+        reject("There is an error");
+      }
       h1.style.color = color;
+      console.log(`Color changed to ${color}`);
       response("Colour Changed");
     }, delay);
   });
 }
 
 async function demo() {
-  await colorChange("red", 1000);
-  await colorChange("green", 1000);
-  await colorChange("blue", 1000);
-  await colorChange("yellow", 1000);
+  try {
+    await colorChange("red", 1000);
+    await colorChange("green", 1000);
+    await colorChange("blue", 1000);
+    await colorChange("yellow", 1000);
+  } catch (err) {
+    console.log("error caught");
+  }
+  let a = 5;
+  console.log(a);
+  console.log("new number is", a + 3);
 }
 
 // colorChange("red", 1000)
