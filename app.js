@@ -1,11 +1,22 @@
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", async () => {
+  let res = await getFact();
+  // console.log(res);
+
+  let p = document.querySelector("#output");
+  p.innerText = res;
+});
+
 let url = "https://catfact.ninja/fact";
 
 async function getFact() {
   try {
     let res = await axios(url);
-    console.log(res.data);
+    return res.data.fact;
   } catch (e) {
     console.log("error - ", e);
+    return "No Fact Found";
   }
 }
 
