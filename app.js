@@ -1,10 +1,19 @@
-let url2 = "https://dog.ceo/api/breeds/image/random";
+let url = "http://universities.hipolabs.com/search?name=";
 
-async function getNum() {
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", async () => {
+  let con = document.querySelector("input").value;
+  console.log(con);
+
+  let ans = await getCollege(con);
+  console.log(ans);
+});
+
+async function getCollege(con) {
   try {
-    const config = { Headers: { accept: application / json } };
-    let res = await axios(url2);
-    console.log(res, config);
+    let res = await axios.get(url + con);
+    return res.data;
   } catch (err) {
     console.log(err);
   }
