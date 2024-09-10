@@ -7,8 +7,19 @@ btn.addEventListener("click", async () => {
   console.log(con);
 
   let ans = await getCollege(con);
-  console.log(ans);
+  show(ans);
 });
+
+function show(ans) {
+  let list = document.querySelector("#list");
+  list = "";
+  for (a of ans) {
+    console.log(a.name);
+  }
+  let li = document.createElement("li");
+  li.innerText = a.name;
+  list.appendChild(li);
+}
 
 async function getCollege(con) {
   try {
